@@ -1,0 +1,167 @@
+/* CardWoman.css */
+.container-general-cardWoman {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 5px;
+    width: 300px; /* Ancho fijo */
+    height: 450px; /* Alto fijo */
+    margin: 5px;
+    overflow: hidden; /* Asegura que no haya desbordamiento */
+    box-sizing: border-box; /* Incluye el padding y el borde en el tamaño total */
+}
+
+.container-img-cardWoman {
+    width: 100%;
+    height: 200px; /* Tamaño consistente para todas las imágenes */
+    overflow: hidden;
+}
+
+.container-img-cardWoman img {
+    width: 100%;
+    height: 100%;
+}
+
+.container-description-cardWoman {
+    flex: 1;
+    text-align: center;
+    margin-top: 10px;
+    overflow: auto; /* Permite el scroll si el texto es demasiado largo */
+    width: 100%;
+    max-height: 150px; /* Altura máxima para la descripción */
+}
+
+.container-description-cardWoman h2 {
+    font-size: 1.2em;
+    margin: 5px 0;
+    color: #333;
+}
+
+.container-description-cardWoman p {
+    font-size: 0.9em;
+    margin: 5px 0;
+    color: #666;
+    line-height: 1.2em;
+}
+
+.container-button-cardWoman {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    margin-top: 10px;
+}
+
+.button-edit{
+    background-color: #03780f;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+.button-edit:hover{
+    background-color: #03c24f;
+}
+
+.button-delete{
+    background-color: #860202;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+
+.button-delete:hover{
+background-color: #f84141;
+}
+
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.modal-content {
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    width: 80%;
+    max-width: 500px;
+    position: relative;
+}
+
+.modal-close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    border: none;
+    background: transparent;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+form div {
+    margin-bottom: 15px;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+input, textarea {
+    width: 100%;
+    padding: 8px;
+    border-radius: 4px;
+    border: 1px solid #ddd;
+}
+
+.button-save{
+    background-color: #03780f;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.button-save:hover {
+    background: #03c24f;
+}
+
+.button-cancel{
+    background-color: #860202;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+
+.button-cancel:hover{
+background-color: #f84141;
+}
+
+.container-button-modalEdit{
+display: flex;
+flex-direction: row;
+justify-content: space-around;
+}
