@@ -8,7 +8,7 @@
     border-radius: 10px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     padding: 5px;
-    width: 300px; /* Ancho fijo */
+    width: 290px; /* Ancho fijo */
     height: 450px; /* Alto fijo */
     margin: 5px;
     overflow: hidden; /* Asegura que no haya desbordamiento */

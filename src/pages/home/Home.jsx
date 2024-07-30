@@ -1,40 +1,31 @@
 import Nav from "../../componentes/Nav/Nav";
-import CardWoman from "../../componentes/CardWoman/CardWoman";
-import { WomenContext } from "c:/Users/fabri/OneDrive/Escritorio/women-history/src/context/womenContext";
 import { useContext } from "react";
-import "../home/Home.css"
+import { WomenContext } from "c:/Users/fabri/OneDrive/Escritorio/women-history/src/context/womenContext";
 import ButtonAdd from "../../componentes/ButtonAdd/ButtonAdd";
+import SearchBar from "../../componentes/SearchBar/SearchBar";
+import "../home/Home.css";
 
-function Home(){
-
-    const{women}= useContext(WomenContext)
+function Home() {
+    const { women } = useContext(WomenContext);
     console.log(women);
 
-
-
-    return(
+    return (
         <>
-        <div className="container-general-home">
-
-            <div className="container-nav-home">
-                <Nav/>
-            </div>
-            <h1>Women of History</h1>
-            <div>
-                <ButtonAdd/>
-            </div>
-            <div className="container-cardWoman-home">
-            {women.map(woman=>(
-                    <div className="container-cardTask" key={woman.id}>
-                <CardWoman woman={woman}/>
+            <div className="container-general-home">
+                <div className="container-nav-home">
+                    <Nav />
+                </div>
+                <h1>Women of History</h1>
+                <div className="container-buttonAdd">
+                    <ButtonAdd />
+                </div>
+                <div className="container-searchBar">
+                    <SearchBar />
+                </div>
                 
-                    </div>
-
-                ))}
             </div>
-
-        </div>
         </>
-    )
+    );
 }
-export default Home
+
+export default Home;

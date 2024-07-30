@@ -1,0 +1,37 @@
+.search-bar-container {
+    padding: 5px;
+}
+
+.search-input {
+    width: 40%;
+    padding: 10px;
+    margin-bottom: 20px;
+    margin-left: 10px;
+    font-size: 16px;
+}
+
+.card-container {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 5px;
+}
+
+/* Pantallas medianas (tabletas) */
+@media (max-width: 1250px) {
+    .card-container {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+@media (max-width: 953px) {
+    .card-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* Pantallas pequeñas (teléfonos móviles) */
+@media (max-width: 640px) {
+    .card-container {
+        grid-template-columns: 1fr;
+    }
+}
