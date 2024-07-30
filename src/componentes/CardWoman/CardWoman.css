@@ -96,7 +96,7 @@ background-color: #f84141;
     z-index: 1000;
 }
 
-.modal-content {
+.modal-content-edit-cardWoman {
     color: black;
     background: white;
     padding: 20px;
@@ -104,6 +104,7 @@ background-color: #f84141;
     width: 80%;
     max-width: 500px;
     position: relative;
+    
 }
 
 .modal-close {
@@ -132,7 +133,7 @@ input, textarea {
     border: 1px solid #ddd;
 }
 
-.button-save{
+.button-save, .button-confirm{
     background-color: #03780f;
     color: white;
     border: none;
@@ -142,7 +143,7 @@ input, textarea {
     transition: background-color 0.3s ease;
 }
 
-.button-save:hover {
+.button-save .button-confirm:hover {
     background: #03c24f;
 }
 
@@ -165,4 +166,19 @@ background-color: #f84141;
 display: flex;
 flex-direction: row;
 justify-content: space-around;
+}
+
+.container-button-modalDelete{
+    display: flex;
+    justify-content: space-around;
+}
+.modal-content-delete-cardWoman{
+    color: black;
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    width: 80%;
+    max-width: 500px;
+    position: relative;
+    text-align: center;
 }
