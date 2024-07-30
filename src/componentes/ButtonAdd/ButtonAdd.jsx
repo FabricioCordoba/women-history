@@ -32,7 +32,7 @@ const urlWomanApi= "https://66a7a10a53c13f22a3d08009.mockapi.io/women-history/wo
 
       {isModalOpen && (
         <div className="modal">
-          <div className="modal-content">
+          <div className="modal-content-addWoman">
             <span className="close-button" onClick={() => setIsModalOpen(false)}>
               &times;
             </span>
