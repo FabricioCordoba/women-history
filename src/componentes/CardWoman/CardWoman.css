@@ -97,6 +97,7 @@ background-color: #f84141;
 }
 
 .modal-content {
+    color: black;
     background: white;
     padding: 20px;
     border-radius: 8px;

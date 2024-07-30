@@ -24,7 +24,7 @@ export const WomenProvider =({children})=>{
     },[urlWomanApi])
 
     return(
-        <WomenContext.Provider value={{fetchWomen, women}}>
+        <WomenContext.Provider value={{fetchWomen, women, urlWomanApi}}>
             {children}
         </WomenContext.Provider>
     )
