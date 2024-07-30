@@ -27,10 +27,10 @@ export const handleDeleteWoman = async (id) => {
 
 
 export const handleUpdateWoman = async (id, updatedWoman) => {
-    console.log(updatedWoman);
+    
     try {
         const response = await fetch(`${urlWomanApi}/${id}`, {
-            method: 'PATCH', // o PATCH según tu backend
+            method: 'PUT', // o 'PUT' dependiendo de tu API
             headers: {
                 'Content-Type': 'application/json',
             },
@@ -38,7 +38,7 @@ export const handleUpdateWoman = async (id, updatedWoman) => {
         });
 
         if (!response.ok) {
-            throw new Error('Error al actualizar la tarea');
+            throw new Error('Error editing woman');
         }
 
         return await response.json();

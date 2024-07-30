@@ -1,28 +1,29 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
 import { handleDeleteWoman, handleUpdateWoman } from '../../services/WomanService';
 import './CardWoman.css';
 import { WomenContext } from "c:/Users/fabri/OneDrive/Escritorio/women-history/src/context/womenContext";
 
-import { useContext } from 'react';
-
-
 function CardWoman({ woman }) {
-    const {fetchWomen}= useContext(WomenContext)
-    
+    const { fetchWomen,urlWomanApi } = useContext(WomenContext);
     const [isModalOpen, setIsModalOpen] = useState(false);
     const [name, setName] = useState(woman.name);
     const [lastName, setLastName] = useState(woman.lastName);
     const [nationality, setNationality] = useState(woman.nationality);
     const [bio, setBio] = useState(woman.bio);
+    const [photo,setPhoto]= useState(woman.photo)
 
     const openModal = () => setIsModalOpen(true);
     const closeModal = () => setIsModalOpen(false);
 
-    const handleSave = () => {
-        // Aquí puedes manejar el guardado de los datos actualizados
-        console.log('Updated Woman Data:', { name, lastName, nationality, bio });
-        // Por ejemplo, podrías hacer una llamada a una API para actualizar los datos
-        closeModal();
+    const handleSave = async () => {
+        const updatedWoman = { name, lastName, nationality, bio, photo };
+        try {
+            await handleUpdateWoman(woman.id, updatedWoman);
+            fetchWomen(urlWomanApi); 
+            closeModal();
+        } catch (error) {
+            console.error('Error updating woman:', error);
+        }
     };
 
     return (
@@ -85,10 +86,18 @@ function CardWoman({ woman }) {
                                     onChange={(e) => setBio(e.target.value)}
                                 />
                             </div>
+                            <div>
+                                <label htmlFor="photo">Photo:</label>
+                                <input
+                                    type="text"
+                                    id="photo"
+                                    value={photo}
+                                    onChange={(e) => setPhoto(e.target.value)}
+                                />
+                            </div>
                             <div className='container-button-modalEdit'>
                                 <button type="button" onClick={handleSave} className='button-save'>Save</button>
-                                <button type="button" onClick={handleSave} className='button-cancel'>Cancel</button>
-
+                                <button type="button" onClick={closeModal} className='button-cancel'>Cancel</button>
                             </div>
                         </form>
                     </div>
